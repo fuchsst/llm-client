@@ -74,8 +74,8 @@ public class ClaudeClient {
     return new HashMap<>(Map.of("x-api-key", apiKey, "anthropic-version", apiVersion));
   }
 
-  private CompletionEventSourceListener<String> getCompletionEventSourceListener(
-      CompletionEventListener<String> eventListener) {
+  public static CompletionEventSourceListener<String> getCompletionEventSourceListener(
+          CompletionEventListener<String> eventListener) {
     return new CompletionEventSourceListener<>(eventListener) {
       @Override
       protected String getMessage(String data) {

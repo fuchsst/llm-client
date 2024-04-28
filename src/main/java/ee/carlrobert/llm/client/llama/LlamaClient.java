@@ -93,9 +93,9 @@ public class LlamaClient {
     }
   }
 
-  private CompletionEventSourceListener getEventSourceListener(
-      CompletionEventListener eventListener) {
-    return new CompletionEventSourceListener(eventListener) {
+  public static  CompletionEventSourceListener<String> getEventSourceListener(
+      CompletionEventListener<String> eventListener) {
+    return new CompletionEventSourceListener<>(eventListener) {
       @Override
       protected String getMessage(String data) {
         try {
